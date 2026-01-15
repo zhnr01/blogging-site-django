@@ -390,3 +390,91 @@ The `settings.py` file contains the configuration for the Django project. Django
 
 ---
 
+In Django, a **project** is the overall container, while an **application (app)** is a component that does one specific job.
+
+Here:
+
+* The **project** is `mysite`
+* The **application** is `blog`
+
+A Django project can contain **multiple apps**, and apps are designed to be:
+
+* Modular
+* Reusable
+* Focused on a single responsibility
+
+---
+
+### Creating a Django App
+
+From the **project root directory**, you create an app using:
+
+```bash
+python manage.py startapp blog
+```
+
+This command generates a **standard app structure** with files Django expects.
+
+---
+
+### Blog App Structure Explained
+
+```
+blog/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+```
+
+Each file has a clear purpose:
+
+* `__init__.py`
+
+  * Marks the directory as a Python module.
+
+* `admin.py`
+
+  * Used to register models so they appear in the Django admin interface.
+  * Optional, but very powerful.
+
+* `apps.py`
+
+  * Contains application-specific configuration.
+  * Used by Django to identify the app.
+
+* `migrations/`
+
+  * Stores migration files generated from model changes.
+  * Helps Django keep the database schema in sync with models.
+
+* `models.py`
+
+  * Defines the database models for the app.
+  * Every app must have this file (even if empty).
+
+* `tests.py`
+
+  * Used to write automated tests for the application.
+
+* `views.py`
+
+  * Contains the application logic.
+  * Views receive HTTP requests and return HTTP responses.
+
+---
+
+### Why This Matters
+
+Understanding app structure helps you:
+
+* Know where to put logic, models, and tests
+* Scale projects cleanly
+* Follow Django best practices
+* Build reusable components
+
+---
