@@ -324,3 +324,69 @@ These servers are designed for:
 * Scalability
 
 ---
+
+## Project Settings
+
+The `settings.py` file contains the configuration for the Django project. Django includes many settings, but only a subset is required for most projects. Additional settings can be found in the official Django documentation.
+
+---
+
+### Key Settings
+
+#### DEBUG
+- A boolean that enables or disables debug mode.
+- When set to `True`, Django displays detailed error pages.
+- **Must be set to `False` in production** to avoid exposing sensitive data.
+
+---
+
+#### ALLOWED_HOSTS
+- A list of domain names or IP addresses that are allowed to serve the site.
+- Ignored when `DEBUG = True`.
+- Required when running the project in production.
+
+---
+
+#### INSTALLED_APPS
+- Defines the applications that are enabled for the project.
+- This setting must be updated for every Django project.
+- Default Django applications include:
+  - `django.contrib.admin` – Administration interface
+  - `django.contrib.auth` – Authentication system
+  - `django.contrib.contenttypes` – Content type framework
+  - `django.contrib.sessions` – Session framework
+  - `django.contrib.messages` – Messaging framework
+  - `django.contrib.staticfiles` – Static file management
+
+---
+
+#### MIDDLEWARE
+- A list of middleware classes executed during request and response processing.
+- Used for handling security, authentication, sessions, and other global behaviors.
+
+---
+
+#### ROOT_URLCONF
+- Specifies the Python module that contains the root URL patterns.
+- Typically points to `mysite.urls`.
+
+---
+
+#### DATABASES
+- Defines database configurations for the project.
+- Must include a `default` database.
+- Uses SQLite by default for development.
+
+---
+
+#### LANGUAGE_CODE
+- Sets the default language for the Django site.
+
+---
+
+#### USE_TZ
+- Enables or disables timezone-aware datetime support.
+- Enabled by default and recommended for most projects.
+
+---
+
