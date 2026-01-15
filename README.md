@@ -230,3 +230,97 @@ Without migrations:
 
 Migrations are **non-optional** in Django.
 
+---
+
+### What is the Django Development Server?
+
+Django includes a **built-in lightweight web server** that lets you:
+
+* Run your project quickly
+* Test features while developing
+* Avoid configuring a production server early on
+
+This server is meant **only for development**, not for production use.
+
+---
+
+### Automatic Reloading
+
+When the development server is running:
+
+* Django **automatically reloads** when you change code
+* You usually don’t need to restart the server manually
+
+⚠️ However, some changes (like adding new files) may not be detected, so you might need to **restart the server manually** in those cases.
+
+---
+
+### Running the Server
+
+Start the server using:
+
+```bash
+python manage.py runserver
+```
+
+Django will:
+
+* Perform system checks
+* Load project settings
+* Start the server at `http://127.0.0.1:8000/`
+
+If everything works correctly, you’ll see Django’s **default success page** in your browser.
+
+---
+
+### Server Output & Request Logging
+
+When you open the site in your browser, Django logs each HTTP request in the console:
+
+```
+"GET / HTTP/1.1" 200
+```
+
+* Every request is logged
+* Errors appear directly in the console
+* This helps with debugging during development
+
+---
+
+### Custom Host, Port & Settings
+
+You can run the server:
+
+* On a different port
+* With a custom host
+* Using a specific settings file
+
+Example:
+
+```bash
+python manage.py runserver 127.0.0.1:8001 --settings=mysite.settings
+```
+
+This is useful when:
+
+* Working with **multiple environments**
+* Using different settings for development, testing, and production
+
+---
+
+### Development vs Production
+
+🚫 **Do not use the development server in production**
+
+For production:
+
+* Use **WSGI servers** (Apache, Gunicorn, uWSGI)
+* Or **ASGI servers** (Daphne, Uvicorn)
+
+These servers are designed for:
+
+* Performance
+* Security
+* Scalability
+
+---
