@@ -477,4 +477,3 @@ Understanding app structure helps you:
 * Follow Django best practices
 * Build reusable components
 
----
